@@ -5,7 +5,6 @@ import { useFirestore } from 'react-redux-firebase';
 
 function NewLogForm(props) {
   const firestore = useFirestore();
-
   function addLogToFirestore(event) {
     event.preventDefault();
     props.onNewLogCreation();
