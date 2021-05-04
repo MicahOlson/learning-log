@@ -1,4 +1,3 @@
-import Moment from 'moment';
 import logListReducer from '../../reducers/log-list-reducer';
 import * as c from '../../actions/ActionTypes';
 

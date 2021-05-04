@@ -2,7 +2,7 @@ import React from 'react';
 import Log from './Log';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux'
-import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 
 function LogList(props) {
   useFirestoreConnect([

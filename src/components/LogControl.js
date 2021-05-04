@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as a from '../actions';
 import { withFirestore } from 'react-redux-firebase';
-import ReusableForm from './ReusableForm';
 
 class LogControl extends React.Component {
   constructor(props) {
@@ -17,27 +16,6 @@ class LogControl extends React.Component {
       editing: false
     };
   }
-
-//   componentDidMount() {
-//     this.waitTimeUpdateTimer = setInterval(() =>
-//       this.updateTicketElapsedWaitTime(),
-//       60_000
-//     );
-//   }
-
-//   componentWillUnmount() {
-//     clearInterval(this.waitTimeUpdateTimer);
-//   }
-
-// // Update to replace mainTicketList with firestore
-//   updateTicketElapsedWaitTime = () => {
-//     const { dispatch } = this.props;
-//     Object.values(this.props.mainTicketList).forEach(log => {
-//       const newFormattedWaitTime = log.timeOpen.fromNow(true);
-//       const action = a.updateTime(log.id, newFormattedWaitTime);
-//       dispatch(action);
-//     });
-//   }
 
   handleClick = () => {
     if (this.state.selectedLog != null) {

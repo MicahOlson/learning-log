@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const LogListStyle = styled.h3`
+  color: blue;
+`;
 
 function Log(props) {
   return (
     <>
       <div onClick = {() => props.whenLogClicked(props.id)}>
-        <h3>{props.topic}</h3>
+        <LogListStyle>
+        {props.topic}
+        </LogListStyle>
         <h4>{props.name}</h4>
         {/* <p><em>{props.notes}</em></p> */}
         {/* <p><em>{props.formattedWaitTime}</em></p> */}
@@ -21,7 +28,6 @@ Log.propTypes = {
   notes: PropTypes.string,
   id: PropTypes.string,
   whenLogClicked: PropTypes.func,
-  // formattedWaitTime: PropTypes.string
 };
 
 export default Log;

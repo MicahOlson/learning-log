@@ -4,13 +4,13 @@ import { useHistory } from 'react-router-dom';
 
 function Signin() {
   const history = useHistory();
-  
+
   function doSignUp(event) {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
-
+      // Add confirmation message: You have successfully signed up.
     }).catch(function(error) {
       console.log(error)
       document.getElementsByClassName("sign-in-message").innerHTML = error;
@@ -23,7 +23,7 @@ function Signin() {
     const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-      console.log("Successfully signed in!");
+      // Add confirmation message: You have successfully signed in.
     }).catch(function(error) {
       console.log(error.message);
     });
@@ -32,7 +32,7 @@ function Signin() {
   
   function doSignOut() {
     firebase.auth().signOut().then(function() {
-      console.log("Successfully signed out!");
+      // Add confirmation message: You have successfully signed out.
     }).catch(function(error) {
       console.log(error.message);
     });
@@ -69,7 +69,7 @@ function Signin() {
     </form>
 
     <h3>Sign Out</h3>
-  <button onClick={doSignOut}>Sign out</button>
+    <button onClick={doSignOut}>Sign out</button>
     </>
   );
 }
