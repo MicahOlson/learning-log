@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ReusableForm(props) {
-  const { currentTicket } = props;
+  const { currentLog } = props;
   let name = 'Name';
   let topic = 'Topic';
   let notes = 'Write your notes.';
 
-  if (currentTicket) {
-    name = currentTicket.name;
-    topic = currentTicket.topic;
-    notes = currentTicket.notes
+  if (currentLog) {
+    name = currentLog.name;
+    topic = currentLog.topic;
+    notes = currentLog.notes
   }
 
   return (
@@ -37,7 +37,7 @@ function ReusableForm(props) {
 }
 
 ReusableForm.propTypes = {
-  currentTicket: PropTypes.object,
+  currentLog: PropTypes.object,
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 };

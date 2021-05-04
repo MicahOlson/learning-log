@@ -36,9 +36,6 @@ This project demonstates how to persist data with React with Firebase, a NoSQL c
 * Markdown
 * git
 
-## Component Diagram
-![](./public/help-queue-diagram.jpeg)
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)  
 Copyright &copy; 2021 Joey Giunta, Micah L. Olson, Scott O'Neil  
