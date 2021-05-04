@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function ReusableForm(props) {
   const { currentLog } = props;
-  let name = 'Name';
-  let topic = 'Topic';
-  let notes = 'Write your notes.';
+  let name;
+  let topic;
+  let notes;
 
   if (currentLog) {
     name = currentLog.name;
@@ -19,16 +19,19 @@ function ReusableForm(props) {
         <input
           type='text'
           name='name'
-          placeholder={name}
+          defaultValue={name}
+          placeholder='Name'
         />
         <input
           type='text'
           name='topic'
-          placeholder={topic}
+          defaultValue={topic}
+          placeholder='Topic'
         />
         <textarea
           name='notes'
-          placeholder={notes}
+          defaultValue={notes}
+          placeholder='Write your notes.'
         />
         <button type='submit'>{props.buttonText}</button>
       </form>
