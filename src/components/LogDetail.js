@@ -5,15 +5,12 @@ function LogDetail(props) {
   const { log, onClickingDelete } = props;
   return (
     <>
-      {/* <h1>Log Detail</h1> */}
-      {/* <h3>{log.topic}</h3> */}
-      {/* <p><em>{log.notes}</em></p> */}
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
             <h3 id="flip-card-topic">{log.topic}</h3>
           </div>
-          <div class="flip-card-back">
+          <div className="flip-card-back">
             <p id="flip-card-notes"><em>{log.notes}</em></p>
           </div>
         </div>
