@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 function ReusableForm(props) {
   const { currentTicket } = props;
-  let names = 'Pair Names';
-  let location = 'Location';
-  let issue = 'Describe your issue.';
+  let name = 'Name';
+  let topic = 'Topic';
+  let notes = 'Write your notes.';
 
   if (currentTicket) {
-    names = currentTicket.names;
-    location = currentTicket.location;
-    issue = currentTicket.issue
+    name = currentTicket.name;
+    topic = currentTicket.topic;
+    notes = currentTicket.notes
   }
 
   return (
@@ -18,17 +18,17 @@ function ReusableForm(props) {
       <form onSubmit={props.formSubmissionHandler}>
         <input
           type='text'
-          name='names'
-          placeholder={names}
+          name='name'
+          placeholder={name}
         />
-         <input
+        <input
           type='text'
-          name='location'
-          placeholder={location}
+          name='topic'
+          placeholder={topic}
         />
         <textarea
-          name='issue'
-          placeholder={issue}
+          name='notes'
+          placeholder={notes}
         />
         <button type='submit'>{props.buttonText}</button>
       </form>

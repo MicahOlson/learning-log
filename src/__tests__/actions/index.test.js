@@ -2,9 +2,9 @@ import * as actions from './../../actions';
 import * as c from '../../actions/ActionTypes';
 
 describe('help queue actions', () => {
-  it('deleteTicket should create DELETE_TICKET action', () => {
-    expect(actions.deleteTicket(1)).toEqual({
-      type: c.DELETE_TICKET,
+  it('deleteLog should create DELETE_LOG action', () => {
+    expect(actions.deleteLog(1)).toEqual({
+      type: c.DELETE_LOG,
       id: 1
     });
   });

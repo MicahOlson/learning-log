@@ -1,12 +1,10 @@
-import React from "react";
-import devOopsImage from "./../img/dev-oops.png";
+import React from 'react';
 
 function Header() {
   return (
-    <React.Fragment>
-      <img src={devOopsImage} alt="It's a dumpster fire"/>
-      <h1 id="heading">Help Queue</h1>
-    </React.Fragment>
+    <>
+      <h1>Learning Log</h1>
+    </>
   );
 }
 

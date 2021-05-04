@@ -1,16 +1,16 @@
-# Help Queue
+# Learning Log
 
 ### _This project was created solely for the education of the author(s) and is not in a complete or portfolio-ready state. It should not be considered representative of professional work._
 \
 [Epicodus](https://www.epicodus.com/) > [Ruby and React](https://www.learnhowtoprogram.com/tracks/ruby-and-react) > [React](https://www.learnhowtoprogram.com/react) > [Week 4, React with NoSQL](https://www.learnhowtoprogram.com/react/react-with-nosql)  
 \
-Date created: 5/3/2021  
+Date created: 5/4/2021  
 
 ## Authors and Contributors
 Authored by: Joey Giunta, Micah L. Olson, Scott O'Neil  
 
 ## Description
-_React > React with NoSQL_  
+_React > React with NoSQL > Memory Lane_  
 This project demonstates how to persist data with React with Firebase, a NoSQL cloud-based database. The following concepts are covered:  
 * NoSQL databases and how they differ from SQL databases
 * The CAP theorem
