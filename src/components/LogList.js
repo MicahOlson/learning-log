@@ -20,8 +20,8 @@ function LogList(props) {
             whenLogClicked={props.onLogSelection}
             name={log.name}
             topic={log.topic}
-            notes={log.notes}
-            formattedWaitTime={log.formattedWaitTime}
+            // notes={log.notes}
+            // formattedWaitTime={log.formattedWaitTime}
             id={log.id}
             key={log.id}
           />

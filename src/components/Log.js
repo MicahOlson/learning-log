@@ -6,7 +6,7 @@ function Log(props) {
     <>
       <div onClick = {() => props.whenLogClicked(props.id)}>
         <h3>{props.topic} - {props.name}</h3>
-        <p><em>{props.notes}</em></p>
+        {/* <p><em>{props.notes}</em></p> */}
         {/* <p><em>{props.formattedWaitTime}</em></p> */}
         <hr/>
       </div>
