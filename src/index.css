@@ -24,7 +24,7 @@ code {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  border: 1px solid #f1f1f1;
+  /* border: 1px solid #f1f1f1; */
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   margin: auto;
   display: block;
@@ -52,6 +52,7 @@ code {
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  border-radius: 25px 25px 25px 25px;
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -65,4 +66,12 @@ code {
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+#flip-card-topic {
+  margin-top: 85px;
+}
+
+#flip-card-notes {
+  margin: 85px 20px 0px 20px;
 }

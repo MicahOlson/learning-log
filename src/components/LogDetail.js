@@ -11,10 +11,10 @@ function LogDetail(props) {
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <h3>{log.topic}</h3>
+            <h3 id="flip-card-topic">{log.topic}</h3>
           </div>
           <div class="flip-card-back">
-            <p><em>{log.notes}</em></p>
+            <p id="flip-card-notes"><em>{log.notes}</em></p>
           </div>
         </div>
       </div>
