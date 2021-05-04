@@ -1,17 +1,21 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import { useHistory } from 'react-router-dom';
 
 function Signin() {
+  const history = useHistory();
+  
   function doSignUp(event) {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
-      document.getElementsByClassName("sign-in-message").innerHTML = "Successfully signed in!";
+
     }).catch(function(error) {
       console.log(error)
       document.getElementsByClassName("sign-in-message").innerHTML = error;
     })
+    history.push('/');
   }
 
   function doSignIn(event) {
@@ -23,16 +27,18 @@ function Signin() {
     }).catch(function(error) {
       console.log(error.message);
     });
+    history.push('/');
   }
-
+  
   function doSignOut() {
     firebase.auth().signOut().then(function() {
       console.log("Successfully signed out!");
     }).catch(function(error) {
       console.log(error.message);
     });
+    history.push('/');
   }
-
+  
   return (
     <>
     <h3>Sign Up</h3>
