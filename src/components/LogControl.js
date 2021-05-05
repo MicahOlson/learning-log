@@ -76,12 +76,11 @@ class LogControl extends React.Component {
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
       return (
         <>
-          <h4>You must be signed in to see the list of topics.</h4>
+          <h4>You must be signed in to see your list of topics.</h4>
         </>
       )
     }
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
-      console.log(auth.currentUser);
       let currentlyVisibleState = null;
       let buttonText = null;
       if (this.state.editing) {
@@ -99,7 +98,6 @@ class LogControl extends React.Component {
           onClickingEdit={this.handleEditClick}
         />
         buttonText = "Return to Log List"
-        console.log(this.state.selectedLog);
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = 
           <NewLogForm 
