@@ -27,6 +27,8 @@ function LogList(props) {
             id={log.id}
             key={log.id}
           />
+          } else {
+            return null;
           }
         })}
       </>
