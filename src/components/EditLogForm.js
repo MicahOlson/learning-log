@@ -11,7 +11,6 @@ function EditLogForm(props) {
     event.preventDefault();
     props.onEditLog();
     const propertiesToUpdate = {
-      name: event.target.name.value,
       topic: event.target.topic.value,
       notes: event.target.notes.value,
     }

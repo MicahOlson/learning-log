@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 function ReusableForm(props) {
   const { currentLog } = props;
-  let name;
   let topic;
   let notes;
 
   if (currentLog) {
-    name = currentLog.name;
     topic = currentLog.topic;
     notes = currentLog.notes
   }
@@ -16,12 +14,6 @@ function ReusableForm(props) {
   return (
     <>
       <form onSubmit={props.formSubmissionHandler}>
-        <input
-          type='text'
-          name='name'
-          defaultValue={name}
-          placeholder='Name'
-        />
         <input
           type='text'
           name='topic'
