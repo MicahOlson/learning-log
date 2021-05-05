@@ -6,7 +6,7 @@ import EditLogForm from './EditLogForm';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as a from '../actions';
-import { withFirestore } from 'react-redux-firebase';
+import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 class LogControl extends React.Component {
   constructor(props) {
@@ -65,42 +65,61 @@ class LogControl extends React.Component {
   }
 
   render() {
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.state.editing) {
-      currentlyVisibleState = 
-        <EditLogForm 
-          log = {this.state.selectedLog}
-          onEditLog = {this.handleEditingLogInList}
-        />
-      buttonText = "Return to Log List"
-    } else if (this.state.selectedLog != null) {
-      currentlyVisibleState =
-      <LogDetail
-        log={this.state.selectedLog}
-        onClickingDelete={this.handleDeletingLog}
-        onClickingEdit={this.handleEditClick}
-      />
-      buttonText = "Return to Log List"
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = 
-        <NewLogForm 
-          onNewLogCreation={this.handleAddingNewLogToList}
-        />
-      buttonText = "Return to Log List"
-    } else {
-      currentlyVisibleState = 
-        <LogList 
-          onLogSelection={this.handleChangingSelectedLog} 
-        />
-      buttonText = "Add Log"
+    const auth = this.props.firebase.auth();
+    if (!isLoaded(auth)) {
+      return (
+        <>
+          <h4>Loading...</h4>
+        </>
+      )
     }
-    return (
-      <>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </>
-    );
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <>
+          <h4>You must be signed in to see the list of topics.</h4>
+        </>
+      )
+    }
+    if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      console.log(auth.currentUser);
+      let currentlyVisibleState = null;
+      let buttonText = null;
+      if (this.state.editing) {
+        currentlyVisibleState = 
+          <EditLogForm 
+            log = {this.state.selectedLog}
+            onEditLog = {this.handleEditingLogInList}
+          />
+        buttonText = "Return to Log List"
+      } else if (this.state.selectedLog != null) {
+        currentlyVisibleState =
+        <LogDetail
+          log={this.state.selectedLog}
+          onClickingDelete={this.handleDeletingLog}
+          onClickingEdit={this.handleEditClick}
+        />
+        buttonText = "Return to Log List"
+        console.log(this.state.selectedLog);
+      } else if (this.props.formVisibleOnPage) {
+        currentlyVisibleState = 
+          <NewLogForm 
+            onNewLogCreation={this.handleAddingNewLogToList}
+          />
+        buttonText = "Return to Log List"
+      } else {
+        currentlyVisibleState = 
+          <LogList 
+            onLogSelection={this.handleChangingSelectedLog} 
+          />
+        buttonText = "Add Log"
+      }
+      return (
+        <>
+          {currentlyVisibleState}
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </>
+      );
+    }
   }
 }
 

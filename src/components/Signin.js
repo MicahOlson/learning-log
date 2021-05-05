@@ -12,8 +12,8 @@ function Signin() {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
       // Add confirmation message: You have successfully signed up.
     }).catch(function(error) {
-      console.log(error)
-      document.getElementsByClassName("sign-in-message").innerHTML = error;
+      // console.log(error)
+      // {document.getElementsByClassName("sign-in-message").innerHTML = error};
     })
     history.push('/');
   }

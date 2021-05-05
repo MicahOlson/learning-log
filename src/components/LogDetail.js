@@ -16,7 +16,7 @@ function LogDetail(props) {
         </div>
       </div>
       <button onClick={props.onClickingEdit}>Update Log</button>
-      <button onClick={() => onClickingDelete(log.id)}>Close Log</button>
+      <button onClick={() => onClickingDelete(log.id)}>Delete Log</button>
       <hr/>
     </>
   );
