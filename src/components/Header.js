@@ -15,7 +15,7 @@ function Header() {
       <LearningLogHeader>
         Learning Log
       </LearningLogHeader>
-      <p><Link to="/">Home</Link> | <Link to="/signin">Sign In</Link></p>
+      <p><Link to="/">Log List</Link> | <Link to="/signin">Sign In</Link></p>
     </>
   );
 }
